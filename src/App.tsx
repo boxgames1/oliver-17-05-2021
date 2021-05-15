@@ -1,7 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import useOrderBookSocket from "./hooks/useOrderBookSocket";
 
 function App() {
+  //const { response: socketResult, error } = useOrderBookSocket();
   return (
     <div className="App">
       <header className="App-header">
