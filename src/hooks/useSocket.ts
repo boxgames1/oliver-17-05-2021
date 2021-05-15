@@ -2,8 +2,6 @@ import { useState, useEffect, useMemo } from "react";
 
 import { OrderBookData } from "../types/OrderBookData";
 
-const THROTTLE_DELTA = 100;
-
 const useSocket = (
   endpoint: string,
   query: Record<string, any>,
