@@ -1,26 +1,32 @@
-import logo from "./logo.svg";
-import "./App.css";
+import styled from "styled-components";
+
+import OrdersBookView from "./components/OrdersBookView";
+import ErrorMessage from "./components/ErrorMessage";
 import useOrderBookSocket from "./hooks/useOrderBookSocket";
+import { colors } from "./theme/colors";
+
+const AppContainer = styled.div`
+  background-color: ${colors.mainBg};
+  min-height: 100vh;
+  width: 100vw;
+  padding: 1em 0;
+`;
+
+const Title = styled.h1`
+  color: ${colors.primary};
+  text-align: center; 
+`;
 
 function App() {
-  //const { response: socketResult, error } = useOrderBookSocket();
+  const { orderBooks, error } = useOrderBookSocket();
+  
+  if (error) return <ErrorMessage message={error} />;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer className="App">
+      <Title>XBT/USD Orders Book</Title>
+      <OrdersBookView orderBooks={orderBooks} />
+    </AppContainer>
   );
 }
 
