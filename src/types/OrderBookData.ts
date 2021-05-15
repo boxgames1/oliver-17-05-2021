@@ -1,4 +1,7 @@
-export type Order = number[];
+export type Price = number;
+export type Size = number;
+
+export type Order = [Price, Size];
 
 export type OrderBookData = {
   bids: Order[];
@@ -10,3 +13,9 @@ export type OrderBookItemData = {
   size: number;
   accumulatedSize: number;
 };
+
+
+export type OrderBooksState = {
+  bids: OrderBookItemData[],
+  asks: OrderBookItemData[],
+}
