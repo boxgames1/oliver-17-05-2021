@@ -1,4 +1,4 @@
-### Q's
+## Q's
 
 - 1. What would you add to your solution if you had more time?
   - The app is quite simple for now tbh, so it doesn't need much more to do. I prefer to keep things simple. We could add tools to improve developer experience in the long term like proper linter settings, dockerize it, create test utils. I'd also like to improve the UI.
