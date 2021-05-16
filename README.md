@@ -1,4 +1,4 @@
-### How to run it
+## How to run it
 
 - Install deps: `yarn`
 - Start it: `yarn start`
